@@ -1,12 +1,12 @@
-// var baseUrl =  'https://drageons.herokuapp.com/character/1'
-// var baseUrl =  'http://pokeapi.co/api/v2/pokemon/5'
-var baseUrl =  'http://dnd5eapi.co/api/spells'
+var baseUrl = "https://drageons.herokuapp.com/"
 
-fetch(baseUrl)
-  .then(response => {
-    console.log(response);
-    return response.json()
-  })
-  .then(response => {
-    console.log(response[0]);
-  })
+fetch(baseUrl + "character")
+	.then(response => response.json())
+	.then(response => {
+		var name = response[0].name;
+		console.log(response[0]);
+		console.log(name);
+	})
+	.catch(error => {
+		console.log(error);
+	})
